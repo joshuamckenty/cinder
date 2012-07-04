@@ -14,7 +14,7 @@
 
 from sqlalchemy import Column, Integer, MetaData, Table
 
-from cinder import log as logging
+from cinder.openstack.common import log as logging
 
 
 def upgrade(migrate_engine):

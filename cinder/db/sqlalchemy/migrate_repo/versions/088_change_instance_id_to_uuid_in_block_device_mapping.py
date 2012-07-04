@@ -20,7 +20,7 @@ from sqlalchemy import select, Column, ForeignKey, Integer
 from sqlalchemy import MetaData, String, Table
 from migrate import ForeignKeyConstraint
 
-from cinder import log as logging
+from cinder.openstack.common import log as logging
 
 
 LOG = logging.getLogger(__name__)

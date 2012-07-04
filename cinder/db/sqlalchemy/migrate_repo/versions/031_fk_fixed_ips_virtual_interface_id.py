@@ -16,7 +16,7 @@
 from sqlalchemy import MetaData, Table
 from migrate import ForeignKeyConstraint
 
-from cinder import log as logging
+from cinder.openstack.common import log as logging
 
 LOG = logging.getLogger(__name__)
 

@@ -27,7 +27,7 @@ from cinder import db
 from cinder import exception
 from cinder import flags
 from cinder import utils
-from cinder import log as logging
+from cinder.openstack.common import log as logging
 from cinder.compute import aggregate_states
 from cinder.db.sqlalchemy import models
 from cinder.db.sqlalchemy.session import get_session
