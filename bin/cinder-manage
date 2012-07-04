@@ -560,7 +560,7 @@ def main():
 
     try:
         argv = FLAGS(sys.argv)
-        logging.setup()
+        logging.setup("cinder")
     except IOError, e:
         if e.errno == errno.EACCES:
             print _('Please re-run cinder-manage as root.')

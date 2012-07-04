@@ -51,7 +51,7 @@ LOG = logging.getLogger('cinder.all')
 if __name__ == '__main__':
     utils.default_flagfile()
     flags.FLAGS(sys.argv)
-    logging.setup()
+    logging.setup("cinder")
     utils.monkey_patch()
     servers = []
     # cinder-api
@@ -59,7 +59,7 @@ if __name__ == '__main__':
         try:
             servers.append(service.WSGIService(api))
         except (Exception, SystemExit):
-            logging.exception(_('Failed to load %s') % '%s-api' % api)
+            LOG.exception(_('Failed to load %s') % '%s-api' % api)
 
     for binary in ['cinder-volume', 'cinder-scheduler']:
         try:

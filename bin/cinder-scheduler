@@ -44,7 +44,7 @@ from cinder import utils
 if __name__ == '__main__':
     utils.default_flagfile()
     flags.FLAGS(sys.argv)
-    logging.setup()
+    logging.setup("cinder")
     utils.monkey_patch()
     server = service.Service.create(binary='cinder-scheduler')
     service.serve(server)
