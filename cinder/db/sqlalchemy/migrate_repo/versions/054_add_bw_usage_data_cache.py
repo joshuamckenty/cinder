@@ -18,7 +18,7 @@
 from sqlalchemy import Column, Table, MetaData
 from sqlalchemy import Integer, BigInteger, DateTime, Boolean, String
 
-from cinder import log as logging
+from cinder.openstack.common import log as logging
 
 LOG = logging.getLogger(__name__)
 

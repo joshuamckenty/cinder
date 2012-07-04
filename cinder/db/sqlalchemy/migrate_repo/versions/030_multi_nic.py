@@ -17,7 +17,7 @@ from sqlalchemy import select, Boolean, Column, DateTime, ForeignKey
 from sqlalchemy import Integer, MetaData, String
 from sqlalchemy import Table
 
-from cinder import log as logging
+from cinder.openstack.common import log as logging
 from cinder import utils
 
 LOG = logging.getLogger(__name__)

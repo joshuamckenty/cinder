@@ -17,7 +17,7 @@
 #    under the License.
 
 from sqlalchemy import Column, Integer, MetaData, Table
-from cinder import log as logging
+from cinder.openstack.common import log as logging
 
 LOG = logging.getLogger(__name__)
 
