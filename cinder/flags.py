@@ -72,19 +72,6 @@ def _get_my_ip():
     except socket.error:
         return "127.0.0.1"
 
-
-log_opts = [
-    cfg.StrOpt('logdir',
-               default=None,
-               help='Log output to a per-service log file in named directory'),
-    cfg.StrOpt('logfile',
-               default=None,
-               help='Log output to a named file'),
-    cfg.BoolOpt('use_stderr',
-                default=True,
-                help='Log output to standard error'),
-    ]
-
 core_opts = [
     cfg.StrOpt('connection_type',
                default=None,
