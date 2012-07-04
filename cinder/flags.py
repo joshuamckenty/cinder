@@ -30,22 +30,17 @@ import os
 import socket
 import sys
 
-from cinder.compat import flagfile
 from cinder.openstack.common import cfg
 
 
-class CinderConfigOpts(cfg.CommonConfigOpts):
-
-    def __init__(self, *args, **kwargs):
-        super(CinderConfigOpts, self).__init__(*args, **kwargs)
-        self.disable_interspersed_args()
-
-    def __call__(self, argv):
-        with flagfile.handle_flagfiles_managed(argv[1:]) as args:
-            return argv[:1] + super(CinderConfigOpts, self).__call__(args)
+FLAGS = cfg.CONF
 
 
-FLAGS = CinderConfigOpts()
+def parse_args(argv, default_config_files=None):
+    FLAGS.disable_interspersed_args()
+    return argv[:1] + FLAGS(argv[1:],
+                            project='cinder',
+                            default_config_files=default_config_files)
 
 
 class UnrecognizedFlag(Exception):

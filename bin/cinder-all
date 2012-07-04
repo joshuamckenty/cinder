@@ -49,8 +49,7 @@ from cinder import utils
 LOG = logging.getLogger('cinder.all')
 
 if __name__ == '__main__':
-    utils.default_flagfile()
-    flags.FLAGS(sys.argv)
+    flags.parse_args(sys.argv)
     logging.setup("cinder")
     utils.monkey_patch()
     servers = []
