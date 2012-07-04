@@ -37,7 +37,7 @@ Options can be strings, integers, floats, booleans, lists or 'multi strings'::
                                    help='List of APIs to enable by default')
 
     DEFAULT_EXTENSIONS = [
-        'nova.api.openstack.compute.contrib.standard_extensions'
+        'cinder.api.openstack.compute.contrib.standard_extensions'
     ]
     osapi_compute_extension_opt = cfg.MultiStrOpt('osapi_compute_extension',
                                                   default=DEFAULT_EXTENSIONS)
@@ -194,9 +194,9 @@ Option values may reference other values using PEP 292 string substitution::
     opts = [
         cfg.StrOpt('state_path',
                    default=os.path.join(os.path.dirname(__file__), '../'),
-                   help='Top-level directory for maintaining nova state'),
+                   help='Top-level directory for maintaining cinder state'),
         cfg.StrOpt('sqlite_db',
-                   default='nova.sqlite',
+                   default='cinder.sqlite',
                    help='file name for sqlite'),
         cfg.StrOpt('sql_connection',
                    default='sqlite:///$state_path/$sqlite_db',
