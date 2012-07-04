@@ -48,20 +48,20 @@ from cinder.openstack.common import notifier
 
 log_opts = [
     cfg.StrOpt('logging_context_format_string',
-               default='%(asctime)s %(levelname)s %(name)s [%(request_id)s '
+               default='%(asctime)s %(color)s %(levelname)s %(name)s [%(request_id)s '
                        '%(user_id)s %(project_id)s] %(instance)s'
-                       '%(message)s',
+                       '%(message)s\033[00m',
                help='format string to use for log messages with context'),
     cfg.StrOpt('logging_default_format_string',
-               default='%(asctime)s %(levelname)s %(name)s [-] %(instance)s'
-                       '%(message)s',
+               default='%(asctime)s %(color)s %(levelname)s %(name)s [-] %(instance)s'
+                       '%(message)s\033[00m',
                help='format string to use for log messages without context'),
     cfg.StrOpt('logging_debug_format_suffix',
-               default='from (pid=%(process)d) %(funcName)s '
-                       '%(pathname)s:%(lineno)d',
+               default='%(color)s from (pid=%(process)d) %(funcName)s '
+                       '%(pathname)s:%(lineno)d\033[00m',
                help='data to append to log format when level is DEBUG'),
     cfg.StrOpt('logging_exception_prefix',
-               default='%(asctime)s TRACE %(name)s %(instance)s',
+               default='%(asctime)s %(color)s TRACE %(name)s %(instance)s\033[00m',
                help='prefix each line of exception output with this format'),
     cfg.ListOpt('default_log_levels',
                 default=[
