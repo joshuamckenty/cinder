@@ -109,7 +109,7 @@ debug_opts = [
                 help='If passed, use a fake RabbitMQ provider'),
 ]
 
-FLAGS.register_cli_opts(log_opts)
+
 FLAGS.register_cli_opts(core_opts)
 FLAGS.register_cli_opts(debug_opts)
 
